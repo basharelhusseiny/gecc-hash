@@ -6,6 +6,11 @@ import {
 } from "@/components/pages/home";
 import LogoLoop from "@/components/ui/LogoLoop";
 import { imageLogos } from "@/constants";
+import ClientTestimonialsSection from "../components/pages/common/ClientTestimonialsSection.jsx";
+import {
+  CtaSection,
+  ProductionScaleDivider,
+} from "../components/pages/common/index.js";
 
 const HomePage = () => {
   return (
@@ -35,6 +40,9 @@ const HomePage = () => {
       <AboutUsSection />
       <OurServicesSection />
       <FeaturedProjectsSection />
+      <ProductionScaleDivider />
+      <ClientTestimonialsSection />
+      <CtaSection />
     </>
   );
 };
