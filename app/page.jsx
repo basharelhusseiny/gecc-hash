@@ -2,6 +2,7 @@ import {
   HeroSection,
   AboutUsSection,
   OurServicesSection,
+  FeaturedProjectsSection,
 } from "@/components/pages/home";
 import LogoLoop from "@/components/ui/LogoLoop";
 import { imageLogos } from "@/constants";
@@ -33,6 +34,7 @@ const HomePage = () => {
       </div>
       <AboutUsSection />
       <OurServicesSection />
+      <FeaturedProjectsSection />
     </>
   );
 };
