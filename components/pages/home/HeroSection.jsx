@@ -131,7 +131,7 @@ const HeroSection = () => {
       tl.to(
         statsObj,
         {
-          val1: 15,
+          val1: 17,
           val2: 3.5,
           val3: 10,
           val4: 4.8,
@@ -242,7 +242,7 @@ const HeroSection = () => {
           REF. DWG // GECC-H01
         </span>
         <span>SCALE // 1:250 [METRIC]</span>
-        <span>ESTABLISHED // 2010</span>
+        <span>ESTABLISHED // 2009</span>
       </div>
 
       <div className="absolute bottom-12 right-8 hidden xl:flex flex-col font-mono text-[11px] text-white/40 tracking-widest text-right gap-1 select-none z-10">
@@ -1265,7 +1265,7 @@ const HeroSection = () => {
         </div> */}
 
         <span className="inline-block font-bold text-gecc-orange text-[9px] md:text-sm tracking-[0.2em] uppercase mb-2 md:mb-3">
-          EST. 2010 — SOUTH SUDAN
+          EST.09 — SOUTH SUDAN
         </span>
 
         {/* Orange Headline */}
@@ -1297,7 +1297,7 @@ const HeroSection = () => {
 
           {/* Technical Label Tag */}
           <div className="absolute -top-2.5 left-6 px-2 bg-[#0a1f3d] font-mono text-[9px] text-gecc-orange tracking-[0.2em] uppercase font-bold">
-            SPECIFICATION // 01
+            SPECIFICATION 
           </div>
 
           <p
@@ -1316,7 +1316,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 max-w-[400px] sm:max-w-none mx-auto">
           <button
             onClick={scrollToServices}
-            className="w-full sm:w-auto bg-gecc-orange hover:bg-gecc-orange-dark text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-widest transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 shadow-lg shadow-gecc-orange/20 hover:shadow-gecc-orange/35 rounded-sm uppercase group cursor-pointer border border-gecc-orange"
+            className="w-full sm:w-auto bg-gecc-orange hover:bg-gecc-orange-dark text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-widest transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 shadow-lg shadow-gecc-orange/20 hover:shadow-gecc-orange/35 uppercase group cursor-pointer border border-gecc-orange"
           >
             Explore Services
             <ArrowRight
@@ -1329,7 +1329,7 @@ const HeroSection = () => {
               const el = document.querySelector("#projects");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="w-full sm:w-auto bg-gecc-navy/60 backdrop-blur-sm border border-white/30 hover:border-white text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-widest transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 rounded-sm uppercase group cursor-pointer"
+            className="w-full sm:w-auto bg-gecc-navy/60 backdrop-blur-sm border border-white/30 hover:border-white text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-widest transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 uppercase group cursor-pointer"
           >
             View Projects
             <ArrowRight
