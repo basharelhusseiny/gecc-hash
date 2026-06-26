@@ -51,7 +51,7 @@ const WhyChooseSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gecc-navy-dark overflow-hidden py-16 md:py-24"
+      className="relative bg-[#0e2645] overflow-hidden py-16 md:py-24"
     >
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.1]"
@@ -61,7 +61,7 @@ const WhyChooseSection = () => {
           backgroundSize: "28px 28px",
         }}
       />
-      <div className="absolute top-0 left-1/3 w-[450px] h-[300px] bg-gecc-orange/[0.04] rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-[450px] h-[300px] bg-[#0e2645]/[0.04] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
         {/* Stat panel */}
@@ -105,7 +105,7 @@ const WhyChooseSection = () => {
           {reasons.map((reason) => (
             <div
               key={reason}
-              className="why-item flex items-start gap-3 border border-white/[0.08] bg-[#070f1d] p-5 hover:border-gecc-orange/40 transition-colors duration-300"
+              className="why-item flex items-start gap-3 border border-white/[0.08] bg-[#070f1d]/30 p-5 hover:border-gecc-orange/40 transition-colors duration-300"
             >
               <CheckCircle2
                 size={20}

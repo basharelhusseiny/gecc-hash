@@ -66,7 +66,7 @@ const MissionVisionValuesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gecc-navy-dark overflow-hidden py-16 md:py-24"
+      className="relative bg-[#0e2645] overflow-hidden py-16 md:py-24"
     >
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.1]"
@@ -130,10 +130,10 @@ const MissionVisionValuesSection = () => {
           {values.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="val-card group relative border border-white/[0.08] bg-[#070f1d] p-6 hover:border-gecc-orange/40 transition-colors duration-300"
+              className="val-card group relative border border-white/[0.08] bg-[#070f1d]/40 p-6 hover:border-gecc-orange/40 transition-colors duration-300"
             >
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gecc-orange/30 group-hover:border-gecc-orange/70 transition-colors duration-300" />
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gecc-orange/30 group-hover:border-gecc-orange/70 transition-colors duration-300" />
+              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gecc-orange/70 group-hover:border-gecc-orange/70 transition-colors duration-300" />
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gecc-orange/70 group-hover:border-gecc-orange/70 transition-colors duration-300" />
               <Icon size={20} className="text-gecc-orange mb-3" />
               <h4 className="text-white font-bold text-base mb-2">{title}</h4>
               <p className="text-white/55 text-sm leading-relaxed font-light">

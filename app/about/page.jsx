@@ -1,4 +1,7 @@
-import { PageHeader } from "@/components/pages/common";
+import {
+  ClientTestimonialsSection,
+  PageHeader,
+} from "@/components/pages/common";
 import {
   CompanyOverviewSection,
   MissionVisionValuesSection,
@@ -21,6 +24,7 @@ const AboutUsPage = () => {
       <MissionVisionValuesSection />
       <HSESection />
       <WhyChooseSection />
+      <ClientTestimonialsSection />
     </>
   );
 };

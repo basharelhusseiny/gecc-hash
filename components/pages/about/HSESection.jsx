@@ -140,7 +140,7 @@ const HSESection = () => {
           </div>
 
           {/* Commitments bars */}
-          <div className="hse-bars lg:col-span-5 border border-slate-200 bg-gecc-navy-dark p-7">
+          <div className="hse-bars lg:col-span-5 border border-slate-200 bg-[#0e2645] p-7">
             <div className="text-white font-mono text-xs tracking-[0.25em] uppercase mb-6 pb-3 border-b border-white/10">
               HSE Commitments
             </div>

@@ -1,5 +1,8 @@
 import { ContactSection } from "@/components/pages/contact";
-import { PageHeader } from "../../components/pages/common/index.js";
+import {
+  ClientTestimonialsSection,
+  PageHeader,
+} from "../../components/pages/common/index.js";
 
 const ContactUsPage = () => {
   return (
@@ -13,6 +16,7 @@ const ContactUsPage = () => {
         breadcrumb="Home"
       />
       <ContactSection />
+      <ClientTestimonialsSection />
     </>
   );
 };

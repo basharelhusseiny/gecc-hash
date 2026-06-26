@@ -3,141 +3,31 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, HardHat, Factory, Building2, Zap } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { servicesData, getIconComponent } from "@/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const servicesData = [
-  {
-    id: "01",
-    title: "Road Construction & Asphalting",
-    desc: "Pioneering durable asphalt roadways, highways, and infrastructure that connects cities, empowers communities, and drives long-term regional commerce.",
-    image: "/road-aerial-card.jpg",
-    link: "/services/road-construction",
-    icon: HardHat,
-    specs: [
-      "Heavy-Duty Asphalt",
-      "Highways & Arterials",
-      "Grading & Base Work",
-      "Rehabilitation & Maintenance",
-    ],
-    process: [
-      {
-        step: "PH-01",
-        name: "Geotechnical Analysis",
-        detail: "Assessing soil bearing capacity & terrain run-off factors",
-      },
-      {
-        step: "PH-02",
-        name: "Base Prep & Grading",
-        detail: "Creating high-stability base layers",
-      },
-      {
-        step: "PH-03",
-        name: "Precision Laying",
-        detail: "Applying asphalt with laser controls",
-      },
-    ],
-  },
-  {
-    id: "02",
-    title: "Concrete Product Manufacturing",
-    desc: "Manufacturing high-strength structural concrete blocks, paving blocks, and custom precast elements built to strict industrial and engineering standards.",
-    image: "/paver-card.jpg",
-    link: "/services/concrete-manufacturing",
-    icon: Factory,
-    specs: [
-      "High-Strength Blocks",
-      "Interlocking Pavers",
-      "Precast Elements",
-      "Quality Control Lab",
-    ],
-    process: [
-      {
-        step: "PH-01",
-        name: "Aggregate Grading",
-        detail: "Selecting premium raw aggregates",
-      },
-      {
-        step: "PH-02",
-        name: "Vibro-Compression",
-        detail: "High-amplitude density molding",
-      },
-      {
-        step: "PH-03",
-        name: "Compressive Testing",
-        detail: "Verifying stress load limits in lab",
-      },
-    ],
-  },
-  {
-    id: "03",
-    title: "Real Estate Development",
-    desc: "Developing modern commercial and residential spaces with sustainable architecture, premium materials, and unparalleled structural integrity.",
-    image: "/gallery-3.jpg",
-    link: "/services/real-estate",
-    icon: Building2,
-    specs: [
-      "Commercial Hubs",
-      "Premium Residential",
-      "Green Building Design",
-      "Turnkey Design-Build",
-    ],
-    process: [
-      {
-        step: "PH-01",
-        name: "Master Planning",
-        detail: "Designing high-efficiency layouts",
-      },
-      {
-        step: "PH-02",
-        name: "Structural Erection",
-        detail: "Reinforced concrete framing build",
-      },
-      {
-        step: "PH-03",
-        name: "Premium Handover",
-        detail: "Delivering modern turnkey spaces",
-      },
-    ],
-  },
-  {
-    id: "04",
-    title: "Energy Infrastructure",
-    desc: "Engineering robust power distribution grids, substations, and smart renewable energy installations to power South Sudan and East Africa's future.",
-    image: "/factory-floor.jpg",
-    link: "/services/energy-infrastructure",
-    icon: Zap,
-    specs: [
-      "Substation Design",
-      "Grid Electrification",
-      "Solar & Renewables",
-      "Industrial Power",
-    ],
-    process: [
-      {
-        step: "PH-01",
-        name: "Load Modeling",
-        detail: "Sizing power grids & equipments",
-      },
-      {
-        step: "PH-02",
-        name: "Transmission Install",
-        detail: "Erecting grid towers & switchgears",
-      },
-      {
-        step: "PH-03",
-        name: "Grid Synchronization",
-        detail: "Integrating power into networks",
-      },
-    ],
-  },
-];
+// Transform servicesData to match the component's expected structure
+const transformedServicesData = servicesData.map((service) => ({
+  id: `0${service.id}`,
+  title: service.title,
+  desc: service.shortDescription,
+  image: service.listImage,
+  link: `/services/${service.slug}`,
+  iconName: service.iconName,
+  specs: service.features.slice(0, 4),
+  process: service.process.slice(0, 3).map((step, idx) => ({
+    step: `PH-0${idx + 1}`,
+    name: step.title,
+    detail: step.description,
+  })),
+}));
 
-const TOTAL = servicesData.length;
+const TOTAL = transformedServicesData.length;
 
 const OurServicesSection = () => {
   const wrapperRef = useRef(null);
@@ -347,7 +237,9 @@ const OurServicesSection = () => {
 
                     <div className="flex items-center justify-between border-b border-white/[0.06] pb-2 mb-2.5 text-[9px] font-mono tracking-widest text-white/40 uppercase">
                       <span>SYSTEM // VISUALIZER</span>
-                      <span>REF: SRV-{servicesData[activeIndex].id}</span>
+                      <span>
+                        REF: SRV-{transformedServicesData[activeIndex].id}
+                      </span>
                     </div>
 
                     {/* Viewport Frame */}
@@ -365,7 +257,7 @@ const OurServicesSection = () => {
                       <div className="absolute inset-x-0 top-1/2 h-px bg-white/[0.05] z-10 pointer-events-none" />
                       <div className="absolute inset-y-0 left-1/2 w-px bg-white/[0.05] z-10 pointer-events-none" />
 
-                      {servicesData.map((service, index) => (
+                      {transformedServicesData.map((service, index) => (
                         <img
                           key={service.id}
                           src={service.image}
@@ -392,15 +284,17 @@ const OurServicesSection = () => {
                         Technical Specifications
                       </div>
                       <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5">
-                        {servicesData[activeIndex].specs.map((spec, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center gap-1.5 text-xs text-white/70 font-mono"
-                          >
-                            <span className="w-1.5 h-1.5 bg-gecc-orange shrink-0" />
-                            <span className="truncate">{spec}</span>
-                          </li>
-                        ))}
+                        {transformedServicesData[activeIndex].specs.map(
+                          (spec, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-center gap-1.5 text-xs text-white/70 font-mono"
+                            >
+                              <span className="w-1.5 h-1.5 bg-gecc-orange shrink-0" />
+                              <span className="truncate">{spec}</span>
+                            </li>
+                          ),
+                        )}
                       </ul>
                     </div>
 
@@ -413,29 +307,31 @@ const OurServicesSection = () => {
                         </span>
                       </div>
                       <div className="flex flex-col gap-2">
-                        {servicesData[activeIndex].process.map((step, idx) => (
-                          <div
-                            key={idx}
-                            className="flex gap-2.5 font-mono items-center"
-                          >
-                            <span className="text-gecc-orange text-xs font-bold shrink-0">
-                              {step.step}
-                            </span>
-                            <span className="text-[12px] text-white/85 font-bold truncate max-w-[130px]">
-                              {step.name}
-                            </span>
-                            <span className="w-1.5 h-px bg-white/10 shrink-0" />
-                            <span className="text-[10px] text-white/40 truncate max-w-[150px]">
-                              {step.detail}
-                            </span>
-                          </div>
-                        ))}
+                        {transformedServicesData[activeIndex].process.map(
+                          (step, idx) => (
+                            <div
+                              key={idx}
+                              className="flex gap-2.5 font-mono items-center"
+                            >
+                              <span className="text-gecc-orange text-xs font-bold shrink-0">
+                                {step.step}
+                              </span>
+                              <span className="text-[12px] text-white/85 font-bold truncate max-w-[130px]">
+                                {step.name}
+                              </span>
+                              <span className="w-1.5 h-px bg-white/10 shrink-0" />
+                              <span className="text-[10px] text-white/40 truncate max-w-[150px]">
+                                {step.detail}
+                              </span>
+                            </div>
+                          ),
+                        )}
                       </div>
                     </div>
 
                     {/* Progress dots */}
                     <div className="flex items-center gap-2 mt-4 pt-3 border-t border-white/[0.06]">
-                      {servicesData.map((_, i) => (
+                      {transformedServicesData.map((_, i) => (
                         <div
                           key={i}
                           className={`h-[2px] flex-1 transition-all duration-300 ${
@@ -453,8 +349,8 @@ const OurServicesSection = () => {
                 ref={rightColRef}
                 className="lg:col-span-7 relative h-auto lg:h-[360px] w-full flex flex-col gap-5 lg:gap-0 lg:overflow-hidden"
               >
-                {servicesData.map((service) => {
-                  const Icon = service.icon;
+                {transformedServicesData.map((service) => {
+                  const Icon = getIconComponent(service.iconName);
                   return (
                     <div
                       key={service.id}
@@ -562,8 +458,8 @@ const OurServicesSection = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            {servicesData.map((service) => {
-              const Icon = service.icon;
+            {transformedServicesData.map((service) => {
+              const Icon = getIconComponent(service.iconName);
               return (
                 <div
                   key={service.id}
