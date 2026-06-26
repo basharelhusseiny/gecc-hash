@@ -126,13 +126,10 @@ const Header = () => {
             {/* Navigation List */}
             <nav className="flex flex-col gap-1">
               {navLinks.map((link, index) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollTo(link.href);
-                  }}
+                  onClick={() => setMenuOpen(!menuOpen)}
                   className="group flex items-center justify-between py-4 border-b border-white/[0.04] text-white/70 hover:text-gecc-orange transition-colors duration-200 cursor-pointer"
                 >
                   <span className="font-mono text-sm uppercase tracking-[0.2em] flex items-center gap-3">
@@ -143,7 +140,7 @@ const Header = () => {
                     size={14}
                     className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-gecc-orange"
                   />
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
