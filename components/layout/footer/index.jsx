@@ -5,21 +5,41 @@ import { ArrowUp, MapPin, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 const serviceLinks = [
-  "Road Construction",
-  "Manufacturing",
-  "Real Estate",
-  "Energy",
+  { label: "Road Construction", href: "/services/road-construction" },
+  { label: "Manufacturing", href: "/services/concrete-manufacturing" },
+  { label: "Real Estate", href: "/services/real-estate" },
+  { label: "Energy", href: "/services/energy-infrastructure" },
 ];
 
-const companyLinks = ["About", "Projects", "Careers", "News"];
+const companyLinks = [
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Careers", href: "/careers" },
+  { label: "News", href: "/news" },
+];
 
 const projectLinks = [
-  "G+4 Commercial & Res.",
-  "G+5 Residential Bldg",
-  "Townhouse Buildings",
-  "Road Infrastructure",
-  "UNMISS Cold Storage",
-  "Renewable Energy",
+  {
+    label: "G+4 Commercial & Res.",
+    href: "/projects/g4-commercial-residential-tongping",
+  },
+  {
+    label: "G+5 Residential Bldg",
+    href: "/projects/g5-residential-worldwide-apartments",
+  },
+  {
+    label: "Townhouse Buildings",
+    href: "/projects/paradise-residence-townhouses",
+  },
+  {
+    label: "Road Infrastructure",
+    href: "/projects/road-infrastructure-development-1",
+  },
+  { label: "UNMISS Cold Storage", href: "/projects/unmiss-cold-room-storage" },
+  {
+    label: "Renewable Energy",
+    href: "/projects/renewable-energy-installations",
+  },
 ];
 
 const Footer = () => {
@@ -95,26 +115,14 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3.5">
               {companyLinks.map((link) => (
-                <li key={link}>
-                  <a
-                    href={`#${link.toLowerCase()}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const id =
-                        link === "About"
-                          ? "#about"
-                          : link === "Projects"
-                            ? "#projects"
-                            : "#hero";
-                      document
-                        .querySelector(id)
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
                     className="text-white/60 hover:text-gecc-orange text-[13px] md:text-sm font-mono uppercase tracking-wider transition-all duration-200 flex items-center gap-2 group hover:translate-x-1.5"
                   >
                     <span className="w-1.5 h-1.5 bg-white/20 group-hover:bg-gecc-orange transition-colors rounded-full" />
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -127,20 +135,14 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3.5">
               {projectLinks.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#projects"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document
-                        .querySelector("#projects")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
                     className="text-white/60 hover:text-gecc-orange text-[13px] md:text-sm font-mono uppercase tracking-wider transition-all duration-200 flex items-center gap-2 group hover:translate-x-1.5"
                   >
                     <span className="w-1.5 h-1.5 bg-white/20 group-hover:bg-gecc-orange transition-colors rounded-full" />
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -153,14 +155,14 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3.5">
               {serviceLinks.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#services"
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
                     className="text-white/60 hover:text-gecc-orange text-[13px] md:text-sm font-mono uppercase tracking-wider transition-all duration-200 flex items-center gap-2 group hover:translate-x-1.5"
                   >
                     <span className="w-1.5 h-1.5 bg-white/20 group-hover:bg-gecc-orange transition-colors rounded-full" />
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

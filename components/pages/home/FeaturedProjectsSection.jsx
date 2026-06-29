@@ -6,45 +6,22 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ArrowUpRight, MapPin, Layers } from "lucide-react";
 import Link from "next/link";
+import { projectsData } from "@/constants/projectsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projectsData = [
-  {
-    id: "01",
-    title: "G+4 Commercial & Residential Building",
-    subtitle: "GECC Apartments & Luxury Rooms",
-    location: "Tongping, Juba — Airport Road",
-    category: "Real Estate",
-    image: "/projects/Project 1/11.png",
-  },
-  {
-    id: "02",
-    title: "G+5 Residential Building",
-    subtitle: "Worldwide Apartments",
-    location: "Tongping, Juba, South Sudan",
-    category: "Real Estate",
-    image: "/projects/Project 2/8.png",
-  },
-  {
-    id: "06",
-    title: "UNMISS Integrated Cold-Room Storage",
-    subtitle: "Warehousing & Logistics Support for ES-KO",
-    location: "Malakal, Bentiu & Wau",
-    category: "Infrastructure",
-    image: "/projects/Project 3/3.png",
-  },
-  {
-    id: "04",
-    title: "Road Infrastructure Development",
-    subtitle: "Highway & Arterial Network Expansion",
-    location: "South Sudan",
-    category: "Road Construction",
-    image: "/projects/Project 4/17.png",
-  },
-];
+// Featured projects (first 4 from the data)
+const featuredProjects = projectsData.slice(0, 4).map((project) => ({
+  id: project.id,
+  slug: project.slug,
+  title: project.title,
+  subtitle: project.subtitle,
+  location: project.location,
+  category: project.category,
+  image: project.coverImage,
+}));
 
-const TOTAL_PROJECTS = 7;
+const TOTAL_PROJECTS = projectsData.length;
 
 const FeaturedProjectsSection = () => {
   const sectionRef = useRef(null);
@@ -149,7 +126,7 @@ const FeaturedProjectsSection = () => {
           ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {projectsData.map((project) => (
+          {featuredProjects.map((project) => (
             <div
               key={project.id}
               className="project-card group relative flex flex-col border border-slate-200 bg-white hover:border-gecc-orange/40 hover:shadow-xl hover:shadow-gecc-orange/[0.08] transition-all duration-300 overflow-hidden"
@@ -199,7 +176,7 @@ const FeaturedProjectsSection = () => {
                 </h3>
 
                 <Link
-                  href="/projects"
+                  href={`/projects/${project.slug}`}
                   className="mt-auto pt-3 inline-flex items-center gap-1.5 font-mono font-bold text-slate-500 group-hover:text-gecc-orange uppercase tracking-wider transition-colors duration-300"
                 >
                   View Project
@@ -216,7 +193,7 @@ const FeaturedProjectsSection = () => {
         {/* View All CTA */}
         <div className="proj-cta flex flex-col items-center gap-4 mt-14">
           <p className="text-slate-500 text-sm font-mono uppercase tracking-wider">
-            +{TOTAL_PROJECTS - projectsData.length} More Completed Projects
+            +{TOTAL_PROJECTS - featuredProjects.length} More Completed Projects
           </p>
           <Link
             href="/projects"

@@ -13,7 +13,7 @@ if (typeof window !== "undefined") {
 
 // Transform servicesData to match the component's expected structure
 const transformedServicesData = servicesData.map((service) => ({
-  id: `0${service.id}`,
+  id: `${service.id}`,
   title: service.title,
   desc: service.shortDescription,
   image: service.listImage,

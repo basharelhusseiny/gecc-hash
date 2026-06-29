@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
@@ -1297,7 +1298,7 @@ const HeroSection = () => {
 
           {/* Technical Label Tag */}
           <div className="absolute -top-2.5 left-6 px-2 bg-[#0a1f3d] font-mono text-[9px] text-gecc-orange tracking-[0.2em] uppercase font-bold">
-            SPECIFICATION 
+            SPECIFICATION
           </div>
 
           <p
@@ -1314,29 +1315,26 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 max-w-[400px] sm:max-w-none mx-auto">
-          <button
-            onClick={scrollToServices}
-            className="w-full sm:w-auto bg-gecc-orange hover:bg-gecc-orange-dark text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-widest transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 shadow-lg shadow-gecc-orange/20 hover:shadow-gecc-orange/35 uppercase group cursor-pointer border border-gecc-orange"
+          <Link
+            href="/services"
+            className="w-full sm:w-auto bg-gecc-orange hover:bg-gecc-orange-dark text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-normal transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 shadow-lg shadow-gecc-orange/20 hover:shadow-gecc-orange/35 uppercase group cursor-pointer border border-gecc-orange"
           >
             Explore Services
             <ArrowRight
               size={14}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </button>
-          <button
-            onClick={() => {
-              const el = document.querySelector("#projects");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="w-full sm:w-auto bg-gecc-navy/60 backdrop-blur-sm border border-white/30 hover:border-white text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-widest transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 uppercase group cursor-pointer"
+          </Link>
+          <Link
+            href="/projects"
+            className="w-full sm:w-auto bg-gecc-navy/60 backdrop-blur-sm border border-white/30 hover:border-white text-white px-6 py-3.5 md:px-8 md:py-4 text-xs md:text-sm font-mono font-bold tracking-normal transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 uppercase group cursor-pointer"
           >
             View Projects
             <ArrowRight
               size={14}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </button>
+          </Link>
         </div>
 
         {/* Main stats block (Mobile & Tablet only) */}
