@@ -25,12 +25,12 @@ const stats = [
   {
     icon: CalendarDays,
     value: "2009",
-    label: "Year Established",
+    label: "Established Year",
     sub: "Juba, South Sudan",
   },
   {
     icon: Building2,
-    value: "50+",
+    value: "66+",
     label: "Projects Delivered",
     sub: "Across East Africa",
   },
@@ -281,7 +281,7 @@ const AboutUsSection = () => {
                 playsInline
                 className="w-full h-[340px] md:h-[420px] object-cover"
               >
-                <source src="/factory-loop.mp4" type="video/mp4" />
+                <source src="/Home page_Upscaled.mp4" type="video/mp4" />
                 {/* Fallback image */}
                 <img
                   src="/gallery-1.jpg"

@@ -226,7 +226,6 @@ const HeroSection = () => {
         <span className="text-gecc-orange font-bold text-[10px] tracking-[0.2em] uppercase">
           SYSTEM STANDARDS
         </span>
-        <span>CERTIFIED // ISO CERTIFIED</span>
         <span>QUALITY RATE // 98% PASS RATE</span>
       </div>
 

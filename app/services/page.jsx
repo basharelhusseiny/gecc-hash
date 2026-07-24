@@ -20,7 +20,7 @@ const ServicesPage = () => {
         title="Engineering Every Layer of Infrastructure"
         highlight="Infrastructure"
         description="From roads that connect cities to power grids that energize them — explore GECC's core service lines, each built on 16+ years of regional expertise."
-        image="/factory-floor.jpg"
+        image="/servicess.png"
         breadcrumb="Home"
       />
       <ServicesShowcaseSection />

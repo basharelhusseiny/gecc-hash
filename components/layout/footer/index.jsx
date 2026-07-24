@@ -6,16 +6,18 @@ import Link from "next/link";
 
 const serviceLinks = [
   { label: "Road Construction", href: "/services/road-construction" },
-  { label: "Manufacturing", href: "/services/concrete-manufacturing" },
+  { label: "Manufacturing", href: "/services/batching-plant" },
   { label: "Real Estate", href: "/services/real-estate" },
   { label: "Energy", href: "/services/energy-infrastructure" },
 ];
 
 const companyLinks = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
-  { label: "Careers", href: "/careers" },
-  { label: "News", href: "/news" },
+  { label: "HSE Policy", href: "/hse-policy" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const projectLinks = [

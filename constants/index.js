@@ -11,27 +11,47 @@ export const getIconComponent = (iconName) => iconMap[iconName];
 
 export const imageLogos = [
   {
-    src: "/partners/1.png",
+    src: "/partners/IMG_2654.PNG",
     alt: "Company 1",
     href: "https://company1.com",
   },
   {
-    src: "/partners/2.png",
+    src: "/partners/IMG_2744.PNG",
     alt: "Company 2",
     href: "https://company2.com",
   },
   {
-    src: "/partners/3.png",
+    src: "/partners/IMG_2745.PNG",
     alt: "Company 3",
     href: "https://company3.com",
   },
   {
-    src: "/partners/4.png",
+    src: "/partners/IMG_2746.PNG",
     alt: "Company 4",
     href: "https://company4.com",
   },
   {
-    src: "/partners/5.png",
+    src: "/partners/IMG_2748.WEBP",
+    alt: "Company 5",
+    href: "https://company5.com",
+  },
+  {
+    src: "/partners/IMG_2749.PNG",
+    alt: "Company 5",
+    href: "https://company5.com",
+  },
+  {
+    src: "/partners/IMG_2750.PNG",
+    alt: "Company 5",
+    href: "https://company5.com",
+  },
+  {
+    src: "/partners/IMG_2751.PNG",
+    alt: "Company 5",
+    href: "https://company5.com",
+  },
+  {
+    src: "/partners/IMG_2753.PNG",
     alt: "Company 5",
     href: "https://company5.com",
   },
@@ -158,8 +178,8 @@ export const servicesData = [
 
   {
     id: "02",
-    slug: "concrete-manufacturing",
-    title: "Concrete Product Manufacturing",
+    slug: "batching-plant",
+    title: "Batching Plant and Cement Block Factory",
     icon: Factory,
     iconName: "factory",
     subtitle:
@@ -284,7 +304,7 @@ export const servicesData = [
     description:
       "GECC delivers high-quality building construction for residential, commercial, industrial, and institutional developments across South Sudan and East Africa. Our engineers, architects, and project managers handle every stage of the lifecycle — from site preparation and structural works to finishing and handover — combining durability, functionality, and modern design.",
     stats: [
-      { value: "30+", label: "Buildings Delivered" },
+      { value: "40+", label: "Buildings Delivered" },
       { value: "5+", label: "Countries Reached" },
       { value: "16+", label: "Years Experience" },
     ],
@@ -391,8 +411,8 @@ export const servicesData = [
     iconName: "zap",
     subtitle:
       "Engineering robust power distribution grids, substations, and renewable energy installations for South Sudan and East Africa's future.",
-    heroImage: "/factory-floor.jpg",
-    listImage: "/factory-floor.jpg",
+    heroImage: "/energyy.png",
+    listImage: "/energyy.png",
     shortDescription:
       "Power distribution, substation engineering, and renewable energy solutions built for reliability at scale.",
     description:

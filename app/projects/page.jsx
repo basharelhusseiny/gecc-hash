@@ -20,7 +20,7 @@ const ProjectsPage = () => {
         title="A Record of What We've Built"
         highlight="Built"
         description="From residential towers and road networks to cold-storage logistics and renewable energy — explore GECC's completed work across the region."
-        image="/factory-floor.jpg"
+        image="/ProjectsHeader.jpg"
         breadcrumb="Home"
         meta={[
           { value: String(projectsData.length), label: "Completed Projects" },

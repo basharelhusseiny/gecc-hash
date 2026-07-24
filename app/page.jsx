@@ -28,8 +28,8 @@ const HomePage = () => {
           logos={imageLogos}
           speed={120}
           direction="left"
-          logoHeight={120}
-          gap={60}
+          logoHeight={90}
+          gap={90}
           hoverSpeed={0}
           scaleOnHover
           fadeOut
