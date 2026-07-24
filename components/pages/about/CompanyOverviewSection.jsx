@@ -127,11 +127,21 @@ const CompanyOverviewSection = () => {
                 GECC // Since 2009
               </span>
             </div>
-            <img
-              src="/gallery-1.jpg"
-              alt="GECC construction site"
-              className="w-full h-[380px] md:h-[460px] object-cover"
-            />
+           <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-[340px] md:h-[420px] object-cover"
+              >
+                <source src="/About Page_Upscaled.mp4" type="video/mp4" />
+                {/* Fallback image */}
+                <img
+                  src="/gallery-1.jpg"
+                  alt="GECC construction operations"
+                  className="w-full h-full object-cover"
+                />
+              </video>
             <div className="absolute bottom-3 right-3 z-20 bg-black/50 px-2 py-1 flex items-center gap-1.5">
               <MapPin size={11} className="text-gecc-orange" />
               <span className="font-mono text-white/80 text-[10px] tracking-widest uppercase">
