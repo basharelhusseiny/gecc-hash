@@ -9,7 +9,15 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProductionScaleDivider = () => {
+const ProductionScaleDivider = ({
+  smallTitle,
+  titleOne,
+  titleTwo,
+  desc,
+  img,
+  link,
+  btnText,
+}) => {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
   const lineRef = useRef(null);
@@ -86,7 +94,7 @@ const ProductionScaleDivider = () => {
       <div className="absolute inset-0 overflow-hidden">
         <img
           ref={imgRef}
-          src="/factory-floor.jpg"
+          src={img}
           alt="GECC logistics network across East Africa"
           className="absolute inset-0 w-full h-[130%] -top-[15%] object-cover"
         />
@@ -117,7 +125,7 @@ const ProductionScaleDivider = () => {
         <div className="prod-badge inline-flex items-center gap-2 border border-gecc-orange/40 bg-gecc-orange/[0.1] px-4 py-2">
           <span className="w-1.5 h-1.5 bg-gecc-orange animate-pulse" />
           <span className="font-mono text-gecc-orange text-[10px] tracking-[0.3em] uppercase font-bold">
-            Regional Logistics
+            {smallTitle}
           </span>
         </div>
 
@@ -128,20 +136,18 @@ const ProductionScaleDivider = () => {
         />
 
         <h2 className="prod-heading text-white text-[1.7rem] md:text-[2.3rem] lg:text-[2.6rem] font-bold leading-[1.2]">
-          Scaling Production for{" "}
-          <span className="text-gecc-orange">East Africa&apos;s Growth</span>
+          {titleOne} <span className="text-gecc-orange">{titleTwo}</span>
         </h2>
 
         <p className="prod-desc text-white/75 text-sm md:text-base leading-relaxed font-light max-w-[600px]">
-          From Juba to Kampala, our logistics network delivers manufactured
-          materials to construction sites across the region.
+          {desc}
         </p>
 
         <Link
-          href="/contact"
+          href={link}
           className="prod-cta group mt-2 inline-flex items-center gap-3 bg-gecc-orange hover:bg-[#c95a00] text-white text-sm font-mono font-bold uppercase tracking-[0.18em] px-7 py-3.5 transition-all duration-300 relative overflow-hidden shadow-md shadow-gecc-orange/20"
         >
-          <span className="relative z-10">Contact Us</span>
+          <span className="relative z-10">{btnText}</span>
           <ArrowRight
             size={15}
             className="relative z-10 group-hover:translate-x-1 transition-transform duration-300"

@@ -11,12 +11,12 @@ const ContactUsPage = () => {
         badge="Contact GECC"
         title="Let's Talk About Your Project"
         highlight="Project"
-        image="/factory-floor.jpg"
+        image="/Contact page Top banner.jpg"
         description="Whether it's a road, a building, or a full infrastructure rollout — our team is ready to help you plan it."
         breadcrumb="Home"
       />
       <ContactSection />
-      <ClientTestimonialsSection />
+      {/* <ClientTestimonialsSection /> */}
     </>
   );
 };

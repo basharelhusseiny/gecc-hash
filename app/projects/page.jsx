@@ -2,6 +2,7 @@ import {
   PageHeader,
   CtaSection,
   ClientTestimonialsSection,
+  ProductionScaleDivider,
 } from "@/components/pages/common";
 import { ProjectsShowcaseSection } from "@/components/pages/projects";
 import { projectsData } from "@/constants/projectsData";
@@ -28,7 +29,15 @@ const ProjectsPage = () => {
         ]}
       />
       <ProjectsShowcaseSection />
-      <ClientTestimonialsSection />
+      <ProductionScaleDivider
+        smallTitle="Regional Logistics"
+        titleOne="Scaling Production for"
+        titleTwo="East Africa's Growth"
+        desc="From Juba to Kampala, our logistics network delivers manufactured materials to construction sites across the region."
+        img="/Projects Page bottom banner.jpg"
+        link="/contact"
+        btnText="Contact Us"
+      />
       <CtaSection />
     </>
   );

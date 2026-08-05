@@ -54,7 +54,7 @@ const HSEPolicyPage = () => {
         highlight="Safety"
         description="At GECC, we are committed to maintaining the highest health, safety, and environmental standards across all operations."
         breadcrumb="Home"
-        image="/factory-floor.jpg"
+        image="/HSE page Top Banner.JPG"
         meta={[
           { value: "2009", label: "Established" },
           { value: "24/7", label: "Operational Oversight" },
@@ -111,7 +111,7 @@ const HSEPolicyPage = () => {
 
           <div className="relative overflow-hidden rounded-none border border-slate-200 shadow-xl">
             <img
-              src="/factory-floor.jpg"
+              src="/HSE Page Image.JPG"
               alt="GECC manufacturing and operational environment"
               className="w-full h-full min-h-[320px] object-cover"
             />

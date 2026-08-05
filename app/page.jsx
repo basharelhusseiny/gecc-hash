@@ -40,8 +40,16 @@ const HomePage = () => {
       <AboutUsSection />
       <OurServicesSection />
       <FeaturedProjectsSection />
-      <ProductionScaleDivider />
-      <ClientTestimonialsSection />
+      <ProductionScaleDivider
+        smallTitle="Regional Logistics"
+        titleOne="Scaling Production for"
+        titleTwo="East Africa's Growth"
+        desc="From Juba to Kampala, our logistics network delivers manufactured materials to construction sites across the region."
+        img="/HOME page bottom.jpg"
+        link="/contact"
+        btnText="Contact Us"
+      />
+      {/* <ClientTestimonialsSection /> */}
       <CtaSection />
     </>
   );

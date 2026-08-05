@@ -24,8 +24,16 @@ const ServicesPage = () => {
         breadcrumb="Home"
       />
       <ServicesShowcaseSection />
-      <ProductionScaleDivider />
-      <ClientTestimonialsSection />
+      <ProductionScaleDivider
+        smallTitle="Regional Logistics"
+        titleOne="Scaling Production for"
+        titleTwo="East Africa's Growth"
+        desc="From Juba to Kampala, our logistics network delivers manufactured materials to construction sites across the region."
+        img="/Services Page bottom banner.jpg"
+        link="/contact"
+        btnText="Contact Us"
+      />
+      {/* <ClientTestimonialsSection /> */}
       <CtaSection />
     </>
   );
