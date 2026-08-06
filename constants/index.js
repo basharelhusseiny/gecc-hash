@@ -11,7 +11,7 @@ export const getIconComponent = (iconName) => iconMap[iconName];
 
 export const imageLogos = [
   {
-    src: "/partners/IMG_2654.PNG",
+    src: "/partners/afri-logo-white.png",
     alt: "Company 1",
     href: "https://company1.com",
   },
